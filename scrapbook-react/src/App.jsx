@@ -15,7 +15,7 @@ const JUMP_SECTIONS = (() => {
   const seen = new Set();
   SCRAPBOOK_DATA.forEach((page, i) => {
     if (i === 0) return;
-    const label = page.date ? page.date.replace(/ \d+,/, '') : i < 28 ? '2025' : null;
+    const label = page.date ? page.date.split(' – ')[0].replace(/ \d+,/, '') : null;
     if (!label || seen.has(label)) return;
     seen.add(label);
     sections.push({ label, spread: Math.floor((i + 1) / 2) });

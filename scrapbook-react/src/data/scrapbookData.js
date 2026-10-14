@@ -16,6 +16,7 @@ export const SCRAPBOOK_DATA = [
     "title": "Welcome",
     "sticker": "🌞",
     "text": "Embrace the journey.",
+    "date": "Jan 14, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836700/scrapbook/IMG-20250114-WA0053.jpg",
@@ -34,6 +35,7 @@ export const SCRAPBOOK_DATA = [
     "title": "To",
     "sticker": "📸",
     "text": "Be present, not perfect.",
+    "date": "Jan 14, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836723/scrapbook/IMG-20250114-WA0075.jpg",
@@ -52,6 +54,7 @@ export const SCRAPBOOK_DATA = [
     "title": "A",
     "sticker": "✨",
     "text": "Where intention goes, energy flows.",
+    "date": "Jan 14, 2025 – Jun 8, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836739/scrapbook/IMG-20250114-WA0079.jpg",
@@ -70,6 +73,7 @@ export const SCRAPBOOK_DATA = [
     "title": "Trip",
     "sticker": "💭",
     "text": "Gratitude for all the beautiful moments and the people who make them special.",
+    "date": "Jun 8, 2025 – Jul 26, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836751/scrapbook/IMG-20250608-WA0020.jpg",
@@ -88,6 +92,7 @@ export const SCRAPBOOK_DATA = [
     "title": "Down",
     "sticker": "🌍",
     "text": "Exploring new places and making memories!",
+    "date": "Jul 26, 2025 – Aug 29, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836754/scrapbook/IMG-20250726-WA0033.jpg",
@@ -106,6 +111,7 @@ export const SCRAPBOOK_DATA = [
     "title": "Memory Lane",
     "sticker": "❤️",
     "text": "Cherishing every moment with the people I love!",
+    "date": "Sep 1, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836771/scrapbook/IMG-20250901-WA0059.jpg",
@@ -124,6 +130,7 @@ export const SCRAPBOOK_DATA = [
     "title": "Curated",
     "sticker": "🌍",
     "text": "Exploring new places and making memories!",
+    "date": "Sep 5, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836796/scrapbook/IMG-20250905-WA0028.jpg",
@@ -142,6 +149,7 @@ export const SCRAPBOOK_DATA = [
     "title": "By Aphiwe",
     "sticker": "❤️",
     "text": "Cherishing every moment with the people I love!",
+    "date": "Sep 5, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836798/scrapbook/IMG-20250905-WA0030.jpg",
@@ -160,6 +168,7 @@ export const SCRAPBOOK_DATA = [
     "title": "",
     "sticker": "",
     "text": "Every picture tells a story of moments we treasure.",
+    "date": "Sep 1, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836795/scrapbook/IMG-20250901-WA0429.jpg",
@@ -178,6 +187,7 @@ export const SCRAPBOOK_DATA = [
     "title": "Tough Times Never Last",
     "sticker": "❤️",
     "text": "Cherishing every moment with the people I love!",
+    "date": "Sep 8, 2025 – Sep 25, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836800/scrapbook/IMG-20250908-WA0031.jpg",
@@ -196,6 +206,7 @@ export const SCRAPBOOK_DATA = [
     "title": "LOVE",
     "sticker": "🌍",
     "text": "Exploring new places and making memories!",
+    "date": "Sep 25, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836806/scrapbook/IMG-20250925-WA0085.jpg",
@@ -214,6 +225,7 @@ export const SCRAPBOOK_DATA = [
     "title": "Peace",
     "sticker": "❤️",
     "text": "Cherishing every moment with the people I love!",
+    "date": "Sep 25, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836812/scrapbook/IMG-20250925-WA0098.jpg",
@@ -232,6 +244,7 @@ export const SCRAPBOOK_DATA = [
     "title": "JOY",
     "sticker": "🌍",
     "text": "Exploring new places and making memories!",
+    "date": "Sep 25, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836820/scrapbook/IMG-20250925-WA0102.jpg",
@@ -250,6 +263,7 @@ export const SCRAPBOOK_DATA = [
     "title": "SUCCESS",
     "sticker": "❤️",
     "text": "Cherishing every moment with the people I love!",
+    "date": "Sep 25, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836830/scrapbook/IMG-20250925-WA0127.jpg",
@@ -268,6 +282,7 @@ export const SCRAPBOOK_DATA = [
     "title": "ADventures",
     "sticker": "🌍",
     "text": "Exploring new places and making memories!",
+    "date": "Sep 25, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836835/scrapbook/IMG-20250925-WA0140.jpg",
@@ -286,6 +301,7 @@ export const SCRAPBOOK_DATA = [
     "title": "Special",
     "sticker": "❤️",
     "text": "Cherishing every moment with the people I love!",
+    "date": "Oct 24, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836843/scrapbook/IMG-20251024-WA0037.jpg",
@@ -304,6 +320,7 @@ export const SCRAPBOOK_DATA = [
     "title": "Moments",
     "sticker": "🌍",
     "text": "Exploring new places and making memories!",
+    "date": "Oct 24, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836849/scrapbook/IMG-20251024-WA0041.jpg",
@@ -322,6 +339,7 @@ export const SCRAPBOOK_DATA = [
     "title": "friends",
     "sticker": "❤️",
     "text": "Cherishing every moment with the people I love!",
+    "date": "Oct 24, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836857/scrapbook/IMG-20251024-WA0044.jpg",
@@ -340,6 +358,7 @@ export const SCRAPBOOK_DATA = [
     "title": "Family",
     "sticker": "🌍",
     "text": "Exploring new places and making memories!",
+    "date": "Nov 4, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836863/scrapbook/IMG-20251104-WA0038.jpg",
@@ -358,6 +377,7 @@ export const SCRAPBOOK_DATA = [
     "title": "Legacy",
     "sticker": "❤️",
     "text": "Cherishing every moment with the people I love!",
+    "date": "Nov 8, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836866/scrapbook/IMG-20251108-WA0038.jpg",
@@ -376,6 +396,7 @@ export const SCRAPBOOK_DATA = [
     "title": "Legends",
     "sticker": "🌍",
     "text": "Exploring new places and making memories!",
+    "date": "Nov 8, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836868/scrapbook/IMG-20251108-WA0046.jpg",
@@ -394,6 +415,7 @@ export const SCRAPBOOK_DATA = [
     "title": "Kindness",
     "sticker": "❤️",
     "text": "Cherishing every moment with the people I love!",
+    "date": "Nov 8, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836870/scrapbook/IMG-20251108-WA0049.jpg",
@@ -412,6 +434,7 @@ export const SCRAPBOOK_DATA = [
     "title": "Curated",
     "sticker": "🌍",
     "text": "Exploring new places and making memories!",
+    "date": "Nov 8, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836872/scrapbook/IMG-20251108-WA0051.jpg",
@@ -430,6 +453,7 @@ export const SCRAPBOOK_DATA = [
     "title": "By Aphiwe",
     "sticker": "❤️",
     "text": "Cherishing every moment with the people I love!",
+    "date": "Nov 8, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836874/scrapbook/IMG-20251108-WA0053.jpg",
@@ -448,6 +472,7 @@ export const SCRAPBOOK_DATA = [
     "title": "Curated",
     "sticker": "🌍",
     "text": "Exploring new places and making memories!",
+    "date": "Nov 8, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836876/scrapbook/IMG-20251108-WA0056.jpg",
@@ -466,6 +491,7 @@ export const SCRAPBOOK_DATA = [
     "title": "By Aphiwe",
     "sticker": "❤️",
     "text": "Cherishing every moment with the people I love!",
+    "date": "Nov 8, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836878/scrapbook/IMG-20251108-WA0093.jpg",
@@ -484,6 +510,7 @@ export const SCRAPBOOK_DATA = [
     "title": "Curated",
     "sticker": "🌍",
     "text": "Exploring new places and making memories!",
+    "date": "Nov 8, 2025",
     "photos": [
       {
         "url": "https://res.cloudinary.com/fnuqpqaf/image/upload/v1791836881/scrapbook/IMG-20251108-WA0103.jpg",
