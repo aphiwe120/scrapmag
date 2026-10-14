@@ -9,6 +9,20 @@ const CUBIC_BEZIER = [0.68, -0.55, 0.265, 1.55];
 const DURATION = 0.8;
 const AUTO_FLIP_DELAY = 4000;
 
+// Quick-jump sections: the cover, 2025, and each month of 2026
+const JUMP_SECTIONS = (() => {
+  const sections = [{ label: 'Cover', spread: 0 }];
+  const seen = new Set();
+  SCRAPBOOK_DATA.forEach((page, i) => {
+    if (i === 0) return;
+    const label = page.date ? page.date.replace(/ \d+,/, '') : i < 28 ? '2025' : null;
+    if (!label || seen.has(label)) return;
+    seen.add(label);
+    sections.push({ label, spread: Math.floor((i + 1) / 2) });
+  });
+  return sections;
+})();
+
 const FLIP_TRANSITION = {
   duration: DURATION,
   ease: CUBIC_BEZIER,
@@ -223,6 +237,19 @@ export default function DigitalScrapbook() {
     setTimeout(() => setIsAnimating(false), 800);
   }, [isFirstPage, isAnimating]);
 
+  const goToSpread = useCallback((spread) => {
+    const maxSpread = Math.floor((SCRAPBOOK_DATA.length - 1) / 2);
+    const s = Math.max(0, Math.min(maxSpread, spread));
+    const target = s === 0 ? 0 : 2 * s - 1;
+    if (target === currentIndex) return;
+    setIsAnimating(true);
+    setNavigation({ index: target, direction: target > currentIndex ? 1 : -1 });
+    setTimeout(() => setIsAnimating(false), 800);
+  }, [currentIndex]);
+
+  const currentSpread = currentIndex === 0 ? 0 : (currentIndex + 1) / 2;
+  const maxSpread = Math.floor((SCRAPBOOK_DATA.length - 1) / 2);
+
   // Auto flip: advance every few seconds, stop at the last spread
   useEffect(() => {
     if (!isAutoPlaying || isLastPage) return undefined;
@@ -233,15 +260,24 @@ export default function DigitalScrapbook() {
   // Keyboard navigation from original scrapbook.js (ArrowLeft and ArrowRight)
   useEffect(() => {
     const handleKeyDown = (e) => {
+      if (e.target instanceof HTMLElement && e.target.matches('input, select')) return;
       if (e.key === 'ArrowRight') {
         handleNext();
       } else if (e.key === 'ArrowLeft') {
         handlePrev();
+      } else if (e.key === 'PageDown') {
+        goToSpread(currentSpread + 10);
+      } else if (e.key === 'PageUp') {
+        goToSpread(currentSpread - 10);
+      } else if (e.key === 'Home') {
+        goToSpread(0);
+      } else if (e.key === 'End') {
+        goToSpread(maxSpread);
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [handleNext, handlePrev]);
+  }, [handleNext, handlePrev, goToSpread, currentSpread, maxSpread]);
 
   // Touch swipe handlers from original scrapbook.js
   const handleTouchStart = (e) => {
@@ -540,7 +576,27 @@ export default function DigitalScrapbook() {
             <ArrowLeft className="h-5 w-5 transition-transform group-hover:-translate-x-0.5" />
           </button>
 
-          <div className="flex items-center">
+          <div className="flex items-center gap-3">
+            <select
+              aria-label="Jump to section"
+              value=""
+              onChange={(e) => goToSpread(Number(e.target.value))}
+              className="hidden sm:block rounded-full border border-white/20 bg-black/20 px-2 py-1 text-xs text-white focus:outline-none"
+            >
+              <option value="" disabled>Jump to…</option>
+              {JUMP_SECTIONS.map((s) => (
+                <option key={s.label} value={s.spread} className="text-black">{s.label}</option>
+              ))}
+            </select>
+            <input
+              type="range"
+              aria-label="Scrub through pages"
+              min={0}
+              max={maxSpread}
+              value={currentSpread}
+              onChange={(e) => goToSpread(Number(e.target.value))}
+              className="hidden sm:block w-32 md:w-56 lg:w-80 accent-white"
+            />
             <span
               aria-live="polite"
               className="font-serif text-sm sm:text-base tracking-wider text-white select-none drop-shadow-sm font-medium"
