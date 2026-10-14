@@ -1,12 +1,13 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Play, Pause } from 'lucide-react';
 import PhotoCard from './components/PhotoCard';
 import { SCRAPBOOK_DATA } from './data/scrapbookData';
 
 // Replicating the exact cubic-bezier curve and 0.8s timing from the original scrapbook-style.css
 const CUBIC_BEZIER = [0.68, -0.55, 0.265, 1.55];
 const DURATION = 0.8;
+const AUTO_FLIP_DELAY = 4000;
 
 const FLIP_TRANSITION = {
   duration: DURATION,
@@ -156,6 +157,7 @@ export default function DigitalScrapbook() {
   });
   const [photoIndices, setPhotoIndices] = useState({});
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(false);
   const touchStartX = useRef(null);
 
   const togglePhoto = (pageId, count) => {
@@ -189,6 +191,7 @@ export default function DigitalScrapbook() {
   const currentPageNumber = leftPage?.pageNum ?? leftPage?.id ?? 1;
   const isFirstPage = currentIndex === 0;
   const isLastPage = currentIndex >= SCRAPBOOK_DATA.length - 2;
+  const autoPlayActive = isAutoPlaying && !isLastPage;
 
   const leftActiveIndex = leftPage ? (photoIndices[leftPage.id] || 0) : 0;
   const leftPhoto = leftPage?.photos
@@ -219,6 +222,13 @@ export default function DigitalScrapbook() {
     }));
     setTimeout(() => setIsAnimating(false), 800);
   }, [isFirstPage, isAnimating]);
+
+  // Auto flip: advance every few seconds, stop at the last spread
+  useEffect(() => {
+    if (!isAutoPlaying || isLastPage) return undefined;
+    const timer = setTimeout(handleNext, AUTO_FLIP_DELAY);
+    return () => clearTimeout(timer);
+  }, [isAutoPlaying, isLastPage, currentIndex, handleNext]);
 
   // Keyboard navigation from original scrapbook.js (ArrowLeft and ArrowRight)
   useEffect(() => {
@@ -548,6 +558,17 @@ export default function DigitalScrapbook() {
             className="group flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white shadow-sm transition-all duration-200 hover:scale-105 hover:bg-white/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white disabled:pointer-events-none disabled:opacity-35"
           >
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setIsAutoPlaying((p) => !p)}
+            disabled={isLastPage}
+            aria-label={autoPlayActive ? 'Pause auto flip' : 'Start auto flip'}
+            aria-pressed={autoPlayActive}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white shadow-sm transition-all duration-200 hover:scale-105 hover:bg-white/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white disabled:pointer-events-none disabled:opacity-35"
+          >
+            {autoPlayActive ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
           </button>
         </div>
       </nav>
